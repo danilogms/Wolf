@@ -1,76 +1,47 @@
+// SCRIPT SCROLL SUAVE INÍCIO
 
-function initScrollSuave(){ 
-  const menuSuave = document.querySelectorAll('.menu-js a[href^="#"]');
-  if (menuSuave.length){ 
-    function scrollToSection (event) {
+function initScrollSuave() {
+  const linkInterno = document.querySelectorAll('.js-link a[href^="#"]')
+  if (linkInterno.length){
+    function scrollToSection(event) {
       event.preventDefault();
-      const href = event.currentTarget.getAttribute('href');
+      const href = this.getAttribute('href')
       const section = document.querySelector(href);
-      console.log(section);
       const topo = section.offsetTop;
       window.scrollTo({
         top: topo,
         behavior: 'smooth'
       })
     }
-
-
-    menuSuave.forEach((link) => {
+  
+    linkInterno.forEach((link) => {
       link.addEventListener('click', scrollToSection);
-    });
+    })
   }
+
 }
 
 initScrollSuave();
 
-
-const todasImagens = document.querySelectorAll('img')
-// console.log(todasImagens)
-
-const linksInternos = document.querySelectorAll('a[href^="#"]');
-
-const todosH2 = document.querySelectorAll('h2')
-
-const ultimoP = document.querySelectorAll('p')
-// console.log(ultimoP[ultimoP.length - 1])
-
-const todasDiv = document.querySelectorAll('div');
-todasDiv.forEach((p) => {
-  // console.log(p)
-});
-
-const todosP = document.querySelectorAll('p')
-todosP.forEach((p) => {
-  // console.log(p.innerText)
-})
-
-const itensMenu = document.querySelectorAll('.header-menu a')
-console.log(itensMenu)
-
-itensMenu.forEach(itens => {
-  itens.classList.add('.ativo')
-  console.log(itens)
-});
+// SCRIPT SCROLL SUAVE FIM
 
 
-const rect = itensMenu[2].getBoundingClientRect();
-console.log(rect)
+// SCRIPT ANIMAÇÃO AO SCROLL INÍCIO
 
-console.log(window.innerWidth)
-console.log(window.outerHeight)
-console.log(window.pageYOffset)
+function initAnimaScroll() {
+  const sectionGrid = document.querySelectorAll('.js-scroll')
+  if(sectionGrid.length){
+    const metadeTela = window.innerHeight * 0.6
+    function animaScroll() {
+      sectionGrid.forEach((section) => {
+      const sectionTop = section.getBoundingClientRect().top;
+      const metadeAtiva = sectionTop - metadeTela
+      if (metadeAtiva < 0) {
+        section.classList.add('ativo')
+      }
+      })
+    }
+    window.addEventListener('scroll', animaScroll);
+}}
 
-if(window.innerWidth < 600){
-  console.log('Pagina menor que 600px')
-} else{
-  console.log('Pagina maior que 600px')
-}
-
-const primeiraDiv = todasDiv[0].getBoundingClientRect()
-console.log(primeiraDiv.top)
-
-if(primeiraDiv.top < 0) {
-  console.log('Passou')
-} else {
-  console.log('não passou')
-}
+initAnimaScroll();

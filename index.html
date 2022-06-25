@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lobo</title>
     <meta name="description" contend="Desenvolvedor Front End - Danilo Gomes">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.min.css">
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,7 +16,7 @@
     <header class="header">
         <img src="img/marca.svg" alt="" width="104" height="38">
         <nav>
-            <ul class="header-menu menu-js">
+            <ul class="header-menu js-link">
                 <li><a href="#experiencia">Experiência</a></li>
                 <li><a href="#formaçao">Formação</a></li>
                 <li><a href="#contato">Contato</a></li>
@@ -27,13 +27,13 @@
 
     <main>
         <!-- INICIO GRID 1 -->
-        <div class="grid1">
+        <div class="grid1 js-scroll">
 
-            <div>
+            <div class="js-smooth">
             <img class="imagem-perfil" src="img/perfil.jpg" alt="" width="360" height="520">
             </div>    
             
-            <div class="titulo1">
+            <div class="titulo1 js-smooth">
                 <h1>Desenvolvedor <br> Front End & <br> UX/UI Designer</h1>
                 <p>Localizado em Uberaba/Mg 🏖<p>
             </div>
@@ -43,8 +43,8 @@
     <section class="fundo-branco">
         
          <!-- INICIO GRID 2 -->
-         <div class="grid2">
-             <h1 class="subtitulo" id="experiencia">Experiência</h1>
+         <div class="grid2 js-scroll" id="experiencia">
+             <h1 class="subtitulo">Experiência</h1>
              <div>
                  <P class="introdução">Desenvolvo pequenos projetos como o Bikcraft utilizando apenas <strong>HTML</strong>,<strong>CSS</strong> e <strong>JavaScript</strong>. Para aplicativos web como a rede social Dogs eu trabalhei no <strong>UX</strong> e <strong>UI Design</strong> do projeto.</P>
         
@@ -95,7 +95,7 @@
         <!-- INICIO GRID 3 -->
     <section class="fundo-cinza">
         
-            <div class="grid3" id="formaçao">
+            <div class="grid3 js-scroll" id="formaçao">
                 <h2 class="subtitulo">Formação</h2>
                 <div class="formação">
                      <P class="introdução">Minha mais recente experiência acadêmica foi o Curso de HTML, CSS e JavaScript da <strong class="cor">ORIGAMID</strong> 🎓. Além disso continuo me atualizando via cursos intensivos online, pela <strong class="cor">UDEMY</strong>.</P>
@@ -153,7 +153,7 @@
         <!-- FIM GRID 3 -->
     <section class="fundo-black">
             <footer>
-                <div class="rodape" id="contato">
+                <div class="rodape js-scroll" id="contato">
 
                     <div class="disponivel">
                         <p>Estou disponível para novos projetos no momento.<br> Entre em contato comigo e marcamos<br> uma conversa 👋</p>
